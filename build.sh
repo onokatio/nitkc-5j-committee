@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME=委員会割り当て
+NAME=nitkc-5j-committe
 
 GOOS=(linux darwin windows)
 GOARCH=(amd64 386)
@@ -24,6 +24,6 @@ for os in ${GOOS[@]}; do
 			arch_string="32bit"
 		fi
 
-		GOOS=$os GOARCH=$arch go build -o dst/$os_string-${arch_string}-${NAME}${ext} main.go
+		GOOS=$os GOARCH=$arch go build -o dst/${NAME}-$os_string-${arch_string}${ext} main.go
 	done
 done
