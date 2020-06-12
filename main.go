@@ -6,7 +6,7 @@ import "math/rand"
 func main() {
 	StudentMax := 37
 	Student := []int{}
-	Roled := []int{27, 4, 7, 26, 8, 5, 28, 13, 30, 23}
+	Roled := []int{27, 4, 7, 26, 8, 5, 28, 13, 30, 23, 3, 31}
 
 	for index := 1; index <= StudentMax; index++ {
 		skip := 0
@@ -33,7 +33,6 @@ func main() {
 	Committe := map[string]int{
 		"体育":   2,
 		"環境衛生": 2,
-		"交通安全": 2,
 		"監査":   1,
 	}
 
