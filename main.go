@@ -31,7 +31,6 @@ func main() {
 	fmt.Println("Student[] = ", Student)
 
 	Committe := map[string]int{
-		"会計":   1,
 		"体育":   2,
 		"環境衛生": 2,
 		"交通安全": 2,
