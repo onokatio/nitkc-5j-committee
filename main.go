@@ -11,12 +11,12 @@ func main() {
 	for index := 1; index <= StudentMax; index++ {
 		skip := 0
 		for _, roled := range Roled {
-			if(index + 1 == roled){
+			if(index == roled){
 				skip = 1
 			}
 		}
 		if(skip == 0){
-			Student = append(Student, index + 1)
+			Student = append(Student, index)
 		}
 	}
 
