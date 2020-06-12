@@ -5,16 +5,26 @@ import "math/rand"
 
 func main() {
 	StudentMax := 37
-	Student := make([]int, StudentMax)
-	for index := range Student {
-		Student[index] = index + 1
+	Student := []int{}
+	Roled := []int{27, 4, 7, 26, 8, 5, 28, 13, 30, 23}
+
+	for index := 1; index <= StudentMax; index++ {
+		skip := 0
+		for _, roled := range Roled {
+			if(index + 1 == roled){
+				skip = 1
+			}
+		}
+		if(skip == 0){
+			Student = append(Student, index + 1)
+		}
 	}
 
 	var seed int64
 	fmt.Print("Input Seed:")
 	fmt.Scan(&seed)
 	r := rand.New(rand.NewSource(seed))
-	r.Shuffle(StudentMax, func(i int, j int) {
+	r.Shuffle(len(Student), func(i int, j int) {
 		Student[i], Student[j] = Student[j], Student[i]
 	})
 
