@@ -8,6 +8,8 @@ for os in ${GOOS[@]}; do
 	for arch in ${GOARCH[@]}; do
 		if [ "$os" == "windows" ];then
 			ext=".exe"
+		else
+			ext=".bin"
 		fi
 
 		if [ "$os" == "darwin" ];then
@@ -22,6 +24,6 @@ for os in ${GOOS[@]}; do
 			arch_string="32bit"
 		fi
 
-		GOOS=$os GOARCH=$arch go build -o dst/$NAME-$os_string-${arch_string}${ext} main.go
+		GOOS=$os GOARCH=$arch go build -o dst/$os_string-${arch_string}-${NAME}${ext} main.go
 	done
 done
